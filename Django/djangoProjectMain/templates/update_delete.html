@@ -1,0 +1,46 @@
+<!-- update_delete.html -->
+{% extends "index.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update/Delete Student</title>
+    <style>
+        
+        .container {
+            margin-top: 50px;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .form-control {
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            margin-right: 10px;
+        }
+        .btn-danger {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-4">Update/Delete Student Record</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="usn" class="form-label">Enter USN:</label>
+                <input type="text" id="usn" name="usn" class="form-control" placeholder="Enter USN">
+            </div>
+            <div>
+                <button type="submit" name="action" value="Update" class="btn btn-primary">Update</button>
+                <button type="submit" name="action" value="Delete" class="btn btn-danger">Delete</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock content %}

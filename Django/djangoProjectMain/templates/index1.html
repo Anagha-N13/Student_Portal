@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>Add Student</h1>
+    <form class="m-3" method='post'>
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">USN</label>
+          <input  name="usn" type="text" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Name</label>
+          <input name="name" type="text" class="form-control" required >
+        </div>
+        <div class="mb-3 ">
+            <label class="form-check-label" for="exampleCheck1">Age</label>
+          <input name="age" type="number" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-check-label" for="exampleCheck1">Branch</label>
+          <input name="branch" type="text" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+{% endblock content %}
+
+

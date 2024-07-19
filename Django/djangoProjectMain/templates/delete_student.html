@@ -1,0 +1,48 @@
+<!-- delete_student.html -->
+{% extends "index.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Student</title>
+    <style>
+        
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .card-header {
+            font-weight: bold;
+        }
+        .btn-danger {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                Delete Student Record
+            </div>
+            <div class="card-body">
+                <p>Are you sure you want to delete the following student record?</p>
+                <p><strong>USN:</strong> {{ student.usn }}</p>
+                <p><strong>Name:</strong> {{ student.name }}</p>
+                <p><strong>Age:</strong> {{ student.age }}</p>
+                <p><strong>Branch:</strong> {{ student.branch }}</p>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock content %}
